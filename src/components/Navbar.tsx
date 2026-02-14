@@ -54,14 +54,13 @@ export default function Navbar() {
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-6">
           <a
-            href="#login"
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/login"
             className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
           >
             Login
           </a>
           <a
-            href="#cadastro"
-            onClick={(e) => handleNavClick(e, "#cadastro")}
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
             className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             Começar Agora
@@ -96,14 +95,13 @@ export default function Navbar() {
           ))}
           <hr className="border-gray-100" />
           <a
-            href="#login"
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/login"
             className="block text-sm font-medium text-gray-600 hover:text-primary transition-colors py-2"
           >
             Login
           </a>
           <a
-            href="#cadastro"
-            onClick={(e) => handleNavClick(e, "#cadastro")}
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
             className="block w-full text-center bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all"
           >
             Começar Agora

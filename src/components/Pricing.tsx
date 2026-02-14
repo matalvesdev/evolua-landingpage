@@ -54,7 +54,7 @@ export default function Pricing() {
 
       <div className="mt-12 flex justify-end">
         <a
-          href="#cadastro"
+          href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
         >
           Vamos começar?{" "}

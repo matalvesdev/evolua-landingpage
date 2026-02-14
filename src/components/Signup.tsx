@@ -134,15 +134,15 @@ export default function Signup() {
           </div>
 
           <div className="pt-4">
-            <button
-              type="button"
+            <a
+              href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
               className="w-full py-5 px-8 bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-2xl shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 group"
             >
               Quero meu teste grátis agora
               <span className="material-symbols-outlined group-hover:rotate-12 transition-transform">
                 rocket_launch
               </span>
-            </button>
+            </a>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 mt-6 text-xs text-text-secondary-light bg-gray-50 py-3 rounded-xl border border-gray-100">
               <div className="flex items-center gap-1">
                 <span className="material-symbols-outlined text-sm text-primary">
