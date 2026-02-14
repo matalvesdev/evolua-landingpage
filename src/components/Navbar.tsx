@@ -60,7 +60,7 @@ export default function Navbar() {
             Login
           </a>
           <a
-            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
             className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             Começar Agora
@@ -101,7 +101,7 @@ export default function Navbar() {
             Login
           </a>
           <a
-            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/register"
+            href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
             className="block w-full text-center bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all"
           >
             Começar Agora
