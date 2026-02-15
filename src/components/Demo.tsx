@@ -48,17 +48,18 @@ export default function Demo() {
       </div>
 
       <div
-        className="relative mx-auto max-w-5xl px-6"
+        className="relative mx-auto max-w-6xl px-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Main image */}
-        <div className="relative rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden aspect-[3/2]">
+        <div className="relative rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden">
           <Image
             src={slides[current].src}
             alt={slides[current].alt}
-            fill
-            className="object-cover object-top"
+            width={1920}
+            height={1080}
+            className="w-full h-auto block"
             priority={current === 0}
           />
 
@@ -112,7 +113,7 @@ export default function Demo() {
         </div>
       </div>
 
-      <div className="mt-12 flex justify-end max-w-5xl mx-auto px-6">
+      <div className="mt-12 flex justify-end max-w-6xl mx-auto px-6">
         <a
           href="#social-proof"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
