@@ -36,23 +36,23 @@ export default function Pricing() {
       className="py-20 px-6 conversational-container border-b border-gray-100"
       id="pricing"
     >
-      <div className="mb-16">
+      <div className="mb-16 text-center">
         <h2 className="text-3xl font-bold mb-6">
           Planos simples, como a sua clínica deve ser
         </h2>
-        <p className="text-lg text-text-secondary-light leading-relaxed">
+        <p className="text-lg text-text-secondary-light leading-relaxed max-w-xl mx-auto">
           Sem contratos de fidelidade complicados. Transparência total para você
           crescer.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-2xl mx-auto">
         {plans.map((plan) => (
           <PricingCard key={plan.name} {...plan} />
         ))}
       </div>
 
-      <div className="mt-12 flex justify-end">
+      <div className="mt-12 flex justify-center">
         <a
           href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
