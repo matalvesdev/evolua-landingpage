@@ -53,13 +53,13 @@ export default function Demo() {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Main image */}
-        <div className="relative bg-white rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden">
+        <div className="relative bg-gray-50 rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden aspect-[4/3] flex items-center justify-center">
           <Image
             src={slides[current].src}
             alt={slides[current].alt}
-            width={1920}
-            height={1080}
-            className="w-full h-auto"
+            width={1200}
+            height={900}
+            className="max-w-full max-h-full object-contain"
             priority={current === 0}
           />
 
