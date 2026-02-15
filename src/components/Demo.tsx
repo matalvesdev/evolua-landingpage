@@ -37,7 +37,7 @@ export default function Demo() {
       className="section-fade px-6 pt-32 pb-24"
       id="demo-section"
     >
-      <div className="mb-16 text-center px-6 max-w-[780px] mx-auto">
+      <div className="mb-16 text-center px-6 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Veja a Evolua em ação
         </h2>
@@ -48,7 +48,7 @@ export default function Demo() {
       </div>
 
       <div
-        className="relative mx-auto max-w-[780px] px-6"
+        className="relative mx-auto max-w-5xl px-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -112,7 +112,7 @@ export default function Demo() {
         </div>
       </div>
 
-      <div className="mt-12 flex justify-end max-w-[780px] mx-auto px-6">
+      <div className="mt-12 flex justify-end max-w-5xl mx-auto px-6">
         <a
           href="#social-proof"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
