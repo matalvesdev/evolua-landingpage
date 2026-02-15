@@ -17,16 +17,6 @@ body {
 }
 
 .section-fade {
-  border-bottom: none;
-  position: relative;
-}
-
-.section-fade::after {
-  content: "";
-  display: block;
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
