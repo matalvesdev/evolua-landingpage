@@ -34,7 +34,7 @@ export default function Demo() {
 
   return (
     <section
-      className="min-h-screen flex flex-col justify-center section-fade"
+      className="section-fade px-6"
       id="demo-section"
     >
       <div className="mb-16 text-center px-6 max-w-[780px] mx-auto">
