@@ -33,11 +33,8 @@ export default function Demo() {
   }, [isHovered, next]);
 
   return (
-    <section
-      className="py-24 px-6 conversational-container section-fade"
-      id="demo-section"
-    >
-      <div className="mb-16 text-center">
+    <section className="py-24 px-6 section-fade" id="demo-section">
+      <div className="mb-16 text-center conversational-container">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Veja a Evolua em ação
         </h2>
@@ -48,7 +45,8 @@ export default function Demo() {
       </div>
 
       <div
-        className="relative group mx-auto max-w-4xl"
+        className="relative mx-auto"
+        style={{ maxWidth: "900px" }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -61,16 +59,14 @@ export default function Demo() {
             priority={current === 0}
           />
 
-          {/* Prev/Next buttons */}
+          {/* Prev/Next */}
           <button
             onClick={prev}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
             style={{ opacity: isHovered ? 1 : 0 }}
             aria-label="Anterior"
           >
-            <span className="material-symbols-outlined text-gray-700">
-              chevron_left
-            </span>
+            <span className="material-symbols-outlined text-gray-700">chevron_left</span>
           </button>
           <button
             onClick={next}
@@ -78,21 +74,17 @@ export default function Demo() {
             style={{ opacity: isHovered ? 1 : 0 }}
             aria-label="Próximo"
           >
-            <span className="material-symbols-outlined text-gray-700">
-              chevron_right
-            </span>
+            <span className="material-symbols-outlined text-gray-700">chevron_right</span>
           </button>
 
-          {/* Dots overlay */}
+          {/* Dots */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  i === current
-                    ? "bg-white w-6"
-                    : "bg-white/50 hover:bg-white/70"
+                  i === current ? "bg-white w-6" : "bg-white/50 hover:bg-white/70"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
@@ -100,26 +92,18 @@ export default function Demo() {
           </div>
         </div>
 
-        {/* Caption */}
         <div className="mt-8 text-center">
           <p className="text-sm font-medium text-gray-500 bg-gray-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100">
-            <span className="material-symbols-outlined text-base text-primary">
-              timer
-            </span>
+            <span className="material-symbols-outlined text-base text-primary">timer</span>
             {slides[current].alt}
           </p>
         </div>
       </div>
 
-      <div className="mt-12 flex justify-end">
-        <a
-          href="#social-proof"
-          className="text-primary font-bold flex items-center gap-1 hover:underline"
-        >
+      <div className="mt-12 flex justify-end conversational-container">
+        <a href="#social-proof" className="text-primary font-bold flex items-center gap-1 hover:underline">
           Quem usa recomenda{" "}
-          <span className="material-symbols-outlined text-sm">
-            arrow_forward
-          </span>
+          <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
     </section>
