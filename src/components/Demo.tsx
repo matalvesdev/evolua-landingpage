@@ -53,7 +53,7 @@ export default function Demo() {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Main image */}
-        <div className="relative rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden aspect-[4/3]">
+        <div className="relative bg-gray-900 rounded-3xl shadow-2xl shadow-primary/30 overflow-hidden aspect-video">
           <Image
             src={slides[current].src}
             alt={slides[current].alt}
