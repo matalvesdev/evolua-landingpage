@@ -63,7 +63,7 @@ export default function Demo() {
                 alt={slides[current].alt}
                 fill
                 unoptimized
-                className="object-fill"
+                className="object-cover object-top"
                 priority={current === 0}
               />
 
