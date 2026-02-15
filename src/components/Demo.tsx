@@ -64,7 +64,7 @@ export default function Demo() {
                 src={slides[current].src}
                 alt={slides[current].alt}
                 fill
-                sizes="(max-width: 900px) 70vw, 690px"
+                unoptimized
                 className="object-fill"
                 priority={current === 0}
               />
