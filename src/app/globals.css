@@ -25,6 +25,7 @@ body {
   position: relative;
   padding-top: 6rem;
   padding-bottom: 6rem;
+  scroll-margin-top: 5rem;
 }
 
 .glass-card {
