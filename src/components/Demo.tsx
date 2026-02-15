@@ -34,7 +34,7 @@ export default function Demo() {
 
   return (
     <section
-      className="section-fade px-6"
+      className="section-fade px-6 pt-32 pb-24"
       id="demo-section"
     >
       <div className="mb-16 text-center px-6 max-w-[780px] mx-auto">
