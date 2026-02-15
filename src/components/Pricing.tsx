@@ -33,7 +33,7 @@ const plans = [
 export default function Pricing() {
   return (
     <section
-      className="px-6 conversational-container section-fade"
+      className="py-20 px-6 conversational-container border-b border-gray-100"
       id="pricing"
     >
       <div className="mb-16">
