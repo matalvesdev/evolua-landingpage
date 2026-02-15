@@ -33,7 +33,7 @@ export default function Demo() {
   }, [isHovered, next]);
 
   return (
-    <section className="py-24 px-6" id="demo-section">
+    <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6" id="demo-section">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
