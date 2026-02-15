@@ -58,7 +58,8 @@ export default function Demo() {
                 src={slides[current].src}
                 alt={slides[current].alt}
                 fill
-                className="object-cover"
+                sizes="(max-width: 800px) 100vw, 800px"
+                className="object-fill"
                 priority={current === 0}
               />
 
