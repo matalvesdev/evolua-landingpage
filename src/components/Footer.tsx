@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-gray-50 py-16 px-6">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="max-w-[960px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white">
             <span className="material-symbols-outlined text-lg">
@@ -22,7 +22,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-gray-200">
+      <div className="max-w-[960px] mx-auto mt-12 pt-8 border-t border-gray-200">
         <p className="text-center text-xs text-gray-400">
           © 2024 Evolua. Criado com 💜 para fonoaudiólogas que buscam
           excelência.
