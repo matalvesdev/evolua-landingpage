@@ -21,7 +21,7 @@ export default function Signup() {
   }
 
   return (
-    <section className="py-20 px-6 conversational-container" id="cadastro">
+    <section className="min-h-screen flex flex-col justify-center px-6 conversational-container border-b border-gray-100" id="cadastro">
       <div className="text-center mb-16">
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <span className="material-symbols-outlined text-primary text-3xl">
