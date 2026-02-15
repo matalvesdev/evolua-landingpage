@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="py-20 flex flex-col justify-center px-6 conversational-container text-center">
+    <section className="py-20 flex flex-col justify-center px-6 conversational-container text-center border-b border-gray-100">
       <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6">
         Uma nova era na Fonoaudiologia
       </span>
