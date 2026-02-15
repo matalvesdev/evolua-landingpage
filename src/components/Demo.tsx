@@ -45,20 +45,26 @@ export default function Demo() {
           </p>
         </div>
 
-        {/* MacBook Pro Mockup */}
+        {/* MacBook Pro Mockup com imagem real */}
         <div
-          className="macbook-container"
+          className="macbook-mockup"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="macbook-lid">
-            <div className="macbook-notch" />
-            <div className="macbook-screen relative">
+          <div className="macbook-mockup-frame">
+            {/* Imagem do MacBook Pro mockup */}
+            <img
+              src="/screenshots/Minimal-Macbook-Pro-Mockup-1536x1024.jpg"
+              alt="MacBook Pro"
+              draggable={false}
+            />
+            {/* Screenshot do sistema dentro da tela */}
+            <div className="macbook-screen-area">
               <Image
                 src={slides[current].src}
                 alt={slides[current].alt}
                 fill
-                sizes="(max-width: 800px) 100vw, 800px"
+                sizes="(max-width: 900px) 70vw, 690px"
                 className="object-fill"
                 priority={current === 0}
               />
@@ -66,29 +72,29 @@ export default function Demo() {
               {/* Prev/Next */}
               <button
                 onClick={prev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
                 style={{ opacity: isHovered ? 1 : 0 }}
                 aria-label="Anterior"
               >
-                <span className="material-symbols-outlined text-gray-700">chevron_left</span>
+                <span className="material-symbols-outlined text-gray-700 text-sm">chevron_left</span>
               </button>
               <button
                 onClick={next}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
                 style={{ opacity: isHovered ? 1 : 0 }}
                 aria-label="Próximo"
               >
-                <span className="material-symbols-outlined text-gray-700">chevron_right</span>
+                <span className="material-symbols-outlined text-gray-700 text-sm">chevron_right</span>
               </button>
 
               {/* Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                 {slides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
                     className={`w-2 h-2 rounded-full transition-all ${
-                      i === current ? "bg-primary w-6" : "bg-white/60 hover:bg-white/80"
+                      i === current ? "bg-primary w-5" : "bg-white/60 hover:bg-white/80"
                     }`}
                     aria-label={`Slide ${i + 1}`}
                   />
@@ -96,8 +102,6 @@ export default function Demo() {
               </div>
             </div>
           </div>
-          <div className="macbook-base" />
-          <div className="macbook-shadow" />
         </div>
 
         {/* Stats */}
