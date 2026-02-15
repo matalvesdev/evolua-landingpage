@@ -103,7 +103,7 @@ export default function Demo() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
+        <div className="mt-16 mb-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
           <div>
             <div className="text-4xl font-bold text-primary">98%</div>
             <div className="text-text-secondary-light mt-2">Precisão na transcrição clínica</div>
