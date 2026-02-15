@@ -1,7 +1,7 @@
 export default function FeatureSecurity() {
   return (
     <section
-      className="px-6 conversational-container section-fade"
+      className="py-24 px-6 conversational-container section-fade"
       id="pergunta-3"
     >
       <div className="mb-12">

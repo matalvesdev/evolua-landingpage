@@ -34,10 +34,10 @@ export default function Demo() {
 
   return (
     <section
-      className="section-fade px-6 pt-32 pb-24"
+      className="py-24 px-6 conversational-container section-fade"
       id="demo-section"
     >
-      <div className="mb-16 text-center px-6 max-w-5xl mx-auto">
+      <div className="mb-16 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Veja a Evolua em ação
         </h2>
@@ -48,12 +48,11 @@ export default function Demo() {
       </div>
 
       <div
-        className="relative mx-auto max-w-6xl px-6"
+        className="relative group mx-auto max-w-4xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Main image */}
-        <div className="relative bg-gray-900 rounded-3xl shadow-2xl shadow-primary/30 overflow-hidden aspect-video">
+        <div className="relative bg-black rounded-[2rem] shadow-2xl shadow-primary/30 border border-gray-800 overflow-hidden aspect-video">
           <Image
             src={slides[current].src}
             alt={slides[current].alt}
@@ -65,7 +64,7 @@ export default function Demo() {
           {/* Prev/Next buttons */}
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:opacity-100 focus:opacity-100"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
             style={{ opacity: isHovered ? 1 : 0 }}
             aria-label="Anterior"
           >
@@ -75,7 +74,7 @@ export default function Demo() {
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
             style={{ opacity: isHovered ? 1 : 0 }}
             aria-label="Próximo"
           >
@@ -83,26 +82,26 @@ export default function Demo() {
               chevron_right
             </span>
           </button>
-        </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-6">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                i === current
-                  ? "bg-primary w-8"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Slide ${i + 1}`}
-            />
-          ))}
+          {/* Dots overlay */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === current
+                    ? "bg-white w-6"
+                    : "bg-white/50 hover:bg-white/70"
+                }`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Caption */}
-        <div className="mt-4 text-center">
+        <div className="mt-8 text-center">
           <p className="text-sm font-medium text-gray-500 bg-gray-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100">
             <span className="material-symbols-outlined text-base text-primary">
               timer
@@ -112,7 +111,7 @@ export default function Demo() {
         </div>
       </div>
 
-      <div className="mt-12 flex justify-end max-w-6xl mx-auto px-6">
+      <div className="mt-12 flex justify-end">
         <a
           href="#social-proof"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
