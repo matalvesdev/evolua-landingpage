@@ -1,4 +1,37 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+
+const slides = [
+  { src: "/screenshots/dashboard.png", alt: "Dashboard - Visão geral da clínica" },
+  { src: "/screenshots/relatorios.png", alt: "Relatórios e Evoluções com IA" },
+  { src: "/screenshots/gravando.png", alt: "Gravação de evolução por voz" },
+  { src: "/screenshots/evolucao.png", alt: "Revisão de evolução gerada por IA" },
+  { src: "/screenshots/pacientes.png", alt: "Gestão de pacientes" },
+  { src: "/screenshots/prontuario.png", alt: "Prontuário do paciente" },
+  { src: "/screenshots/agenda.png", alt: "Agenda inteligente" },
+  { src: "/screenshots/tarefas.png", alt: "Gerenciamento de tarefas" },
+];
+
 export default function Demo() {
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [isHovered, next]);
+
   return (
     <section
       className="py-24 px-6 conversational-container section-fade"
@@ -14,55 +47,67 @@ export default function Demo() {
         </p>
       </div>
 
-      <div className="relative group mx-auto max-w-4xl">
-        <div className="relative bg-black rounded-[2rem] shadow-2xl shadow-primary/30 border border-gray-800 overflow-hidden aspect-video transform hover:scale-[1.01] transition-transform duration-500">
-          {/* Play overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 to-gray-800 flex items-center justify-center group-hover:bg-opacity-90 transition-all cursor-pointer">
-            <div className="relative z-10 w-24 h-24 flex items-center justify-center">
-              <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping"></div>
-              <div className="absolute inset-0 bg-primary/20 rounded-full animate-pulse"></div>
-              <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-2xl transition-transform transform group-hover:scale-110">
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner">
-                  <span className="material-symbols-outlined text-primary text-4xl ml-1">
-                    play_arrow
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          </div>
+      <div
+        className="relative mx-auto max-w-4xl"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Main image */}
+        <div className="relative bg-white rounded-2xl shadow-2xl shadow-primary/20 border border-gray-200 overflow-hidden aspect-[16/10]">
+          <Image
+            src={slides[current].src}
+            alt={slides[current].alt}
+            fill
+            className="object-cover object-top"
+            priority={current === 0}
+          />
 
-          {/* Control bar */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="flex items-center gap-4 w-full">
-              <span className="material-symbols-outlined text-white cursor-pointer hover:text-primary transition-colors">
-                play_arrow
-              </span>
-              <div className="h-1 bg-white/30 rounded-full flex-grow relative cursor-pointer group/timeline">
-                <div className="absolute left-0 top-0 bottom-0 bg-primary w-1/3 rounded-full"></div>
-                <div className="absolute left-1/3 top-1/2 -mt-1.5 w-3 h-3 bg-white rounded-full shadow opacity-0 group-hover/timeline:opacity-100 transition-opacity"></div>
-              </div>
-              <span className="text-xs text-white font-medium whitespace-nowrap">
-                1:24 / 3:45
-              </span>
-            </div>
-            <div className="flex items-center gap-4 ml-4">
-              <span className="material-symbols-outlined text-white cursor-pointer hover:text-primary transition-colors">
-                volume_up
-              </span>
-              <span className="material-symbols-outlined text-white cursor-pointer hover:text-primary transition-colors">
-                fullscreen
-              </span>
-            </div>
-          </div>
+          {/* Prev/Next buttons */}
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:opacity-100 focus:opacity-100"
+            style={{ opacity: isHovered ? 1 : 0 }}
+            aria-label="Anterior"
+          >
+            <span className="material-symbols-outlined text-gray-700">
+              chevron_left
+            </span>
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all"
+            style={{ opacity: isHovered ? 1 : 0 }}
+            aria-label="Próximo"
+          >
+            <span className="material-symbols-outlined text-gray-700">
+              chevron_right
+            </span>
+          </button>
         </div>
 
-        <div className="mt-8 text-center">
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                i === current
+                  ? "bg-primary w-8"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Caption */}
+        <div className="mt-4 text-center">
           <p className="text-sm font-medium text-gray-500 bg-gray-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100">
             <span className="material-symbols-outlined text-base text-primary">
               timer
             </span>
-            Assista e veja como economizar 2 horas por dia
+            {slides[current].alt}
           </p>
         </div>
       </div>
