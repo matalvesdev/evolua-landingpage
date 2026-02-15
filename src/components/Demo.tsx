@@ -34,7 +34,7 @@ export default function Demo() {
 
   return (
     <section
-      className="py-24 section-fade"
+      className="min-h-screen flex flex-col justify-center py-24 section-fade"
       id="demo-section"
     >
       <div className="mb-16 text-center px-6 max-w-[780px] mx-auto">
