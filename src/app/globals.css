@@ -30,31 +30,32 @@ body {
   display: none;
 }
 
-/* MacBook Pro Mockup */
-.macbook-mockup {
+/* iPad Pro Mockup */
+.ipad-mockup {
   position: relative;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.macbook-mockup-frame {
+.ipad-mockup-frame {
   position: relative;
   width: 100%;
 }
 
-.macbook-mockup-frame > img {
+.ipad-mockup-frame > img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.macbook-screen-area {
+.ipad-screen-area {
   position: absolute;
-  top: 5.8%;
-  left: 11.7%;
-  width: 76.6%;
-  height: 63.5%;
+  top: 4.5%;
+  left: 5.5%;
+  width: 89%;
+  height: 91%;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar {

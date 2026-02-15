@@ -45,21 +45,19 @@ export default function Demo() {
           </p>
         </div>
 
-        {/* MacBook Pro Mockup com imagem real */}
+        {/* iPad Pro Mockup */}
         <div
-          className="macbook-mockup"
+          className="ipad-mockup"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="macbook-mockup-frame">
-            {/* Imagem do MacBook Pro mockup */}
+          <div className="ipad-mockup-frame">
             <img
-              src="/screenshots/Minimal-Macbook-Pro-Mockup-1536x1024.jpg"
-              alt="MacBook Pro"
+              src="/screenshots/ipad-pro-mockup.png"
+              alt="iPad Pro"
               draggable={false}
             />
-            {/* Screenshot do sistema dentro da tela */}
-            <div className="macbook-screen-area">
+            <div className="ipad-screen-area">
               <Image
                 src={slides[current].src}
                 alt={slides[current].alt}
