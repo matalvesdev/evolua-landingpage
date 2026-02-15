@@ -52,12 +52,12 @@ body {
 
 .ipad-screen-area {
   position: absolute;
-  top: 3.8%;
-  left: 4.8%;
-  width: 90.4%;
-  height: 92.4%;
+  top: 5.2%;
+  left: 5.8%;
+  width: 88.4%;
+  height: 89.6%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 14px;
   background: #000;
 }
 
