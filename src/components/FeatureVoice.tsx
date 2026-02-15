@@ -1,7 +1,7 @@
 export default function FeatureVoice() {
   return (
     <section
-      className="py-24 px-6 conversational-container section-fade"
+      className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6 conversational-container section-fade"
       id="pergunta-1"
     >
       <div className="mb-12">
