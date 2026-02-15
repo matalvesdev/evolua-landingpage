@@ -1,7 +1,7 @@
 export default function FeatureSchedule() {
   return (
     <section
-      className="py-24 px-6 conversational-container section-fade"
+      className="py-32 px-6 conversational-container section-fade"
       id="pergunta-2"
     >
       <div className="mb-12">
