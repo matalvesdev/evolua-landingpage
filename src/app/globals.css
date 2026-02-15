@@ -14,13 +14,10 @@ body {
 .conversational-container {
   max-width: 680px;
   margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .section-fade {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  overflow: hidden;
 }
 
 .glass-card {

@@ -33,7 +33,7 @@ export default function Demo() {
   }, [isHovered, next]);
 
   return (
-    <section className="py-32 px-6 section-fade" id="demo-section">
+    <section className="py-24 px-6" id="demo-section">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -103,7 +103,7 @@ export default function Demo() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 mb-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
           <div>
             <div className="text-4xl font-bold text-primary">98%</div>
             <div className="text-text-secondary-light mt-2">Precisão na transcrição clínica</div>

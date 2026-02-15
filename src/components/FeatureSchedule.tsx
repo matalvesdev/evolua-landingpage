@@ -1,7 +1,7 @@
 export default function FeatureSchedule() {
   return (
     <section
-      className="py-32 conversational-container section-fade"
+      className="py-24 px-6 conversational-container section-fade"
       id="pergunta-2"
     >
       <div className="mb-12">
@@ -16,6 +16,7 @@ export default function FeatureSchedule() {
       </div>
 
       <div className="relative group">
+        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
         <div className="relative glass-card p-8 rounded-3xl">
           <div className="flex justify-between items-start mb-8">
             <div>

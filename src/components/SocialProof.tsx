@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
 export default function SocialProof() {
   return (
     <section
-      className="py-32 conversational-container section-fade"
+      className="py-24 px-6 conversational-container section-fade"
       id="social-proof"
     >
       <div className="mb-16">
