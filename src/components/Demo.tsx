@@ -50,12 +50,12 @@ export default function Demo() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative bg-black rounded-[2rem] shadow-2xl shadow-primary/30 border border-gray-800 overflow-hidden aspect-video">
+        <div className="relative bg-white rounded-[2rem] shadow-2xl shadow-primary/30 border border-gray-200 overflow-hidden aspect-video">
           <Image
             src={slides[current].src}
             alt={slides[current].alt}
             fill
-            className="object-cover object-top"
+            className="object-contain"
             priority={current === 0}
           />
 
@@ -84,7 +84,7 @@ export default function Demo() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  i === current ? "bg-white w-6" : "bg-white/50 hover:bg-white/70"
+                  i === current ? "bg-primary w-6" : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
