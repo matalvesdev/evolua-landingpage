@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import HimetricaAnalytics from "@/components/HimetricaAnalytics";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-text-light antialiased selection:bg-primary/20 font-sans">
+        <HimetricaAnalytics />
         {children}
       </body>
     </html>
