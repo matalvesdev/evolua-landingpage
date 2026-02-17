@@ -17,7 +17,7 @@ export default function FeatureSecurity() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="p-6 bg-primary-light/30 rounded-2xl">
-          <span className="material-symbols-outlined text-primary mb-4">
+          <span className="material-symbols-outlined text-primary mb-4" aria-hidden="true">
             folder_shared
           </span>
           <h4 className="font-bold mb-2">Prontuário Digital</h4>
@@ -26,7 +26,7 @@ export default function FeatureSecurity() {
           </p>
         </div>
         <div className="p-6 bg-green-50 rounded-2xl">
-          <span className="material-symbols-outlined text-green-600 mb-4">
+          <span className="material-symbols-outlined text-green-600 mb-4" aria-hidden="true">
             verified_user
           </span>
           <h4 className="font-bold mb-2">Sigilo Total</h4>

@@ -29,6 +29,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-text-light antialiased selection:bg-primary/20 font-sans">
+        <a href="#main-content" className="skip-link">
+          Pular para o conteúdo principal
+        </a>
         <HimetricaAnalytics />
         {children}
       </body>

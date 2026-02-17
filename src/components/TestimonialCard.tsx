@@ -12,7 +12,7 @@ export default function TestimonialCard({
         <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
           {avatarUrl ? (
             <img
-              alt={name}
+              alt={`Foto de ${name}`}
               className="w-full h-full object-cover"
               src={avatarUrl}
             />

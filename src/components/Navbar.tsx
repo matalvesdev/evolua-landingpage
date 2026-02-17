@@ -23,7 +23,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
+    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300" aria-label="Navegação principal">
       <div className="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
@@ -82,7 +82,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3" role="menu" aria-label="Menu de navegação mobile">
           {navLinks.map((link) => (
             <a
               key={link.href}

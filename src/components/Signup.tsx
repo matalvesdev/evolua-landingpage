@@ -43,6 +43,7 @@ export default function Signup() {
         <form
           onSubmit={handleSubmit}
           autoComplete="off"
+          aria-label="Formulário de cadastro para teste gratuito"
           className="space-y-6 relative z-10"
         >
           <div className="grid grid-cols-1 gap-6">
@@ -59,6 +60,7 @@ export default function Signup() {
                 placeholder="Seu nome completo"
                 value={name}
                 onChange={(e) => handleNameInput(e.target.value)}
+                aria-required="true"
                 className="w-full px-6 py-4 bg-gray-50 border-none focus:ring-2 focus:ring-primary rounded-2xl transition-all"
               />
             </div>
@@ -75,6 +77,7 @@ export default function Signup() {
                 placeholder="voce@exemplo.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                aria-required="true"
                 className="w-full px-6 py-4 bg-gray-50 border-none focus:ring-2 focus:ring-primary rounded-2xl"
               />
             </div>

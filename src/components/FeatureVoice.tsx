@@ -17,7 +17,7 @@ export default function FeatureVoice() {
       <div className="glass-card p-8 rounded-3xl border-primary/10 shadow-xl shadow-primary/5 mb-8">
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-            <span className="material-symbols-outlined">mic</span>
+            <span className="material-symbols-outlined" aria-hidden="true">mic</span>
           </div>
           <div>
             <h3 className="font-bold text-xl">Relatórios por Voz</h3>

@@ -25,7 +25,7 @@ export default function FeatureSchedule() {
               </h4>
               <p className="text-xl font-bold">Assistente Evolua IA</p>
             </div>
-            <span className="material-symbols-outlined text-primary text-3xl">
+            <span className="material-symbols-outlined text-primary text-3xl" aria-hidden="true">
               auto_awesome
             </span>
           </div>

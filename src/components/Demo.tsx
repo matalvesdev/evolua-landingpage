@@ -50,14 +50,18 @@ export default function Demo() {
           className="ipad-mockup"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          role="region"
+          aria-label="Carrossel de demonstração do sistema"
+          aria-roledescription="carrossel"
         >
           <div className="ipad-mockup-frame">
             <img
               src="/screenshots/ipad-pro-mockup.png"
-              alt="iPad Pro"
+              alt=""
+              role="presentation"
               draggable={false}
             />
-            <div className="ipad-screen-area">
+            <div className="ipad-screen-area" aria-live="polite" aria-atomic="true">
               <Image
                 src={slides[current].src}
                 alt={slides[current].alt}
@@ -70,31 +74,33 @@ export default function Demo() {
               {/* Prev/Next */}
               <button
                 onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20 focus:opacity-100"
                 style={{ opacity: isHovered ? 1 : 0 }}
-                aria-label="Anterior"
+                aria-label={`Slide anterior. Atualmente exibindo slide ${current + 1} de ${slides.length}`}
               >
-                <span className="material-symbols-outlined text-gray-700 text-sm">chevron_left</span>
+                <span className="material-symbols-outlined text-gray-700 text-sm" aria-hidden="true">chevron_left</span>
               </button>
               <button
                 onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-20 focus:opacity-100"
                 style={{ opacity: isHovered ? 1 : 0 }}
-                aria-label="Próximo"
+                aria-label={`Próximo slide. Atualmente exibindo slide ${current + 1} de ${slides.length}`}
               >
-                <span className="material-symbols-outlined text-gray-700 text-sm">chevron_right</span>
+                <span className="material-symbols-outlined text-gray-700 text-sm" aria-hidden="true">chevron_right</span>
               </button>
 
               {/* Dots */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {slides.map((_, i) => (
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20" role="tablist" aria-label="Slides da demonstração">
+                {slides.map((slide, i) => (
                   <button
                     key={i}
+                    role="tab"
+                    aria-selected={i === current}
                     onClick={() => setCurrent(i)}
                     className={`w-2 h-2 rounded-full transition-all ${
                       i === current ? "bg-primary w-5" : "bg-white/60 hover:bg-white/80"
                     }`}
-                    aria-label={`Slide ${i + 1}`}
+                    aria-label={`Ir para slide ${i + 1}: ${slide.alt}`}
                   />
                 ))}
               </div>

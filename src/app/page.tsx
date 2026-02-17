@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-32">
+      <main id="main-content" className="pt-24 pb-32">
         <Hero />
         <FeatureVoice />
         <FeatureSchedule />

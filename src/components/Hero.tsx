@@ -19,7 +19,7 @@ export default function Hero() {
           className="group flex items-center gap-2 text-primary font-bold text-lg animate-bounce"
         >
           Descubra como{" "}
-          <span className="material-symbols-outlined">expand_more</span>
+          <span className="material-symbols-outlined" aria-hidden="true">expand_more</span>
         </a>
       </div>
     </section>
