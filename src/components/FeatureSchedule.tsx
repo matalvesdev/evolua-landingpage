@@ -1,10 +1,20 @@
+"use client";
+
+import { motion, fadeInUp, fadeIn, smoothTransition, viewportConfig } from "./motion";
+
 export default function FeatureSchedule() {
   return (
     <section
       className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6 conversational-container section-fade"
       id="pergunta-2"
     >
-      <div className="mb-12">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={smoothTransition}
+        className="mb-12"
+      >
         <h2 className="text-3xl font-bold mb-6">
           Sua agenda trabalha para você, ou você para ela?
         </h2>
@@ -13,9 +23,15 @@ export default function FeatureSchedule() {
           sua tarefa principal. Nossa Agenda Inteligente cuida da logística para
           que você cuide dos pacientes.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="relative group">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.15 }}
+        className="relative group"
+      >
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
         <div className="relative glass-card p-8 rounded-3xl">
           <div className="flex justify-between items-start mb-8">
@@ -46,9 +62,15 @@ export default function FeatureSchedule() {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="mt-12 flex justify-end">
+      <motion.div
+        initial={fadeIn.hidden}
+        whileInView={fadeIn.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.3 }}
+        className="mt-12 flex justify-end"
+      >
         <a
           href="#pergunta-3"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
@@ -58,7 +80,7 @@ export default function FeatureSchedule() {
             arrow_forward
           </span>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

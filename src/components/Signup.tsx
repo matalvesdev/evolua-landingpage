@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { motion, fadeInUp, smoothTransition, viewportConfig } from "./motion";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -22,7 +23,13 @@ export default function Signup() {
 
   return (
     <section className="py-24 px-6 conversational-container" id="cadastro">
-      <div className="text-center mb-16">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={smoothTransition}
+        className="text-center mb-16"
+      >
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <span className="material-symbols-outlined text-primary text-3xl">
             favorite
@@ -35,9 +42,15 @@ export default function Signup() {
           Junte-se a fonoaudiólogas que recuperaram sua rotina e voltaram a se
           apaixonar pela clínica. Comece seu teste gratuito de 7 dias agora.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="bg-white border border-gray-100 shadow-2xl shadow-primary/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.15 }}
+        className="bg-white border border-gray-100 shadow-2xl shadow-primary/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden"
+      >
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
 
         <form
@@ -163,7 +176,7 @@ export default function Signup() {
             </div>
           </div>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 }

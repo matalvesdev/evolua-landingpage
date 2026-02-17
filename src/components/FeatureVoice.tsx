@@ -1,10 +1,20 @@
+"use client";
+
+import { motion, fadeInUp, fadeIn, smoothTransition, viewportConfig } from "./motion";
+
 export default function FeatureVoice() {
   return (
     <section
       className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6 conversational-container section-fade"
       id="pergunta-1"
     >
-      <div className="mb-12">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={smoothTransition}
+        className="mb-12"
+      >
         <h2 className="text-3xl font-bold mb-6">
           Quanto tempo você gasta digitando relatórios após cada sessão?
         </h2>
@@ -12,9 +22,15 @@ export default function FeatureVoice() {
           Em média, fonoaudiólogas perdem até 2 horas diárias apenas com
           documentação. A Evolua entende o valor do seu tempo.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="glass-card p-8 rounded-3xl border-primary/10 shadow-xl shadow-primary/5 mb-8">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.15 }}
+        className="glass-card p-8 rounded-3xl border-primary/10 shadow-xl shadow-primary/5 mb-8"
+      >
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
             <span className="material-symbols-outlined" aria-hidden="true">mic</span>
@@ -31,9 +47,15 @@ export default function FeatureVoice() {
           precisão, transformando pensamentos em prontuários prontos em
           segundos.&quot;
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex justify-end">
+      <motion.div
+        initial={fadeIn.hidden}
+        whileInView={fadeIn.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.3 }}
+        className="flex justify-end"
+      >
         <a
           href="#pergunta-2"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
@@ -43,7 +65,7 @@ export default function FeatureVoice() {
             arrow_forward
           </span>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

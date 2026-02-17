@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, fadeInUp, fadeIn, staggerContainer, smoothTransition, viewportConfig } from "./motion";
 import type { Testimonial } from "@/types";
 import TestimonialCard from "./TestimonialCard";
 
@@ -26,21 +29,41 @@ export default function SocialProof() {
       className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6 conversational-container section-fade"
       id="social-proof"
     >
-      <div className="mb-16">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={smoothTransition}
+        className="mb-16"
+      >
         <h2 className="text-3xl font-bold mb-6">Quem cuida, confia</h2>
         <p className="text-lg text-text-secondary-light leading-relaxed">
           Profissionais que transformaram a gestão de seus consultórios
           compartilham suas experiências.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
         {testimonials.map((t) => (
-          <TestimonialCard key={t.name} {...t} />
+          <motion.div key={t.name} variants={fadeInUp} transition={smoothTransition}>
+            <TestimonialCard {...t} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="mt-12 flex justify-end">
+      <motion.div
+        initial={fadeIn.hidden}
+        whileInView={fadeIn.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.3 }}
+        className="mt-12 flex justify-end"
+      >
         <a
           href="#pricing"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
@@ -50,7 +73,7 @@ export default function SocialProof() {
             arrow_forward
           </span>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

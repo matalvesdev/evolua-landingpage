@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { motion, fadeInUp, scaleIn, staggerContainer, smoothTransition, viewportConfig } from "./motion";
 
 const slides = [
   { src: "/screenshots/dashboard.png", alt: "Dashboard - Visão geral da clínica" },
@@ -35,7 +36,13 @@ export default function Demo() {
   return (
     <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6" id="demo-section">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={fadeInUp.hidden}
+          whileInView={fadeInUp.visible}
+          viewport={viewportConfig}
+          transition={smoothTransition}
+          className="mb-16 text-center"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Veja a Evolua em ação
           </h2>
@@ -43,10 +50,14 @@ export default function Demo() {
             Uma interface desenhada para clareza mental. Tudo o que você precisa,
             onde você espera encontrar.
           </p>
-        </div>
+        </motion.div>
 
         {/* iPad Pro Mockup */}
-        <div
+        <motion.div
+          initial={scaleIn.hidden}
+          whileInView={scaleIn.visible}
+          viewport={viewportConfig}
+          transition={{ ...smoothTransition, delay: 0.15 }}
           className="ipad-mockup"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -106,23 +117,29 @@ export default function Demo() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
-          <div>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-2xl mx-auto"
+        >
+          <motion.div variants={fadeInUp} transition={smoothTransition}>
             <div className="text-4xl font-bold text-primary">98%</div>
             <div className="text-text-secondary-light mt-2">Precisão na transcrição clínica</div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div variants={fadeInUp} transition={smoothTransition}>
             <div className="text-4xl font-bold text-primary">2h</div>
             <div className="text-text-secondary-light mt-2">Economizadas por dia em média</div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div variants={fadeInUp} transition={smoothTransition}>
             <div className="text-4xl font-bold text-primary">Zero</div>
             <div className="text-text-secondary-light mt-2">Configuração técnica necessária</div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, fadeInUp, fadeIn, staggerContainer, smoothTransition, viewportConfig } from "./motion";
 import PricingCard from "./PricingCard";
 
 const plans = [
@@ -36,7 +39,13 @@ export default function Pricing() {
       className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-24 px-6 conversational-container section-fade overflow-hidden"
       id="pricing"
     >
-      <div className="mb-16">
+      <motion.div
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={viewportConfig}
+        transition={smoothTransition}
+        className="mb-16"
+      >
         <h2 className="text-3xl font-bold mb-6">
           Planos simples, como a sua clínica deve ser
         </h2>
@@ -44,15 +53,29 @@ export default function Pricing() {
           Sem contratos de fidelidade complicados. Transparência total para você
           crescer.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+      >
         {plans.map((plan) => (
-          <PricingCard key={plan.name} {...plan} />
+          <motion.div key={plan.name} variants={fadeInUp} transition={smoothTransition}>
+            <PricingCard {...plan} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="mt-12 flex justify-end">
+      <motion.div
+        initial={fadeIn.hidden}
+        whileInView={fadeIn.visible}
+        viewport={viewportConfig}
+        transition={{ ...smoothTransition, delay: 0.3 }}
+        className="mt-12 flex justify-end"
+      >
         <a
           href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
           className="text-primary font-bold flex items-center gap-1 hover:underline"
@@ -62,7 +85,7 @@ export default function Pricing() {
             arrow_forward
           </span>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
