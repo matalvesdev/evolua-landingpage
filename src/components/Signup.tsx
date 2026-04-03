@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState, type FormEvent } from "react";
-import { motion, fadeInUp, smoothTransition, viewportConfig } from "./motion";
+import { useState, type FormEvent } from 'react';
+import { motion, fadeInUp, smoothTransition, viewportConfig } from './motion';
 
 export default function Signup() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [specialty, setSpecialty] = useState("");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [specialty, setSpecialty] = useState('');
+  const [phone, setPhone] = useState('');
   const [showHidden, setShowHidden] = useState(false);
 
   function handleNameInput(value: string) {
@@ -31,16 +31,14 @@ export default function Signup() {
         className="text-center mb-16"
       >
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="material-symbols-outlined text-primary text-3xl">
-            favorite
-          </span>
+          <span className="material-symbols-outlined text-primary text-3xl">favorite</span>
         </div>
         <h2 className="text-4xl font-bold mb-6 tracking-tight">
           Estamos prontos para ser seus parceiros.
         </h2>
         <p className="text-lg text-text-secondary-light">
-          Junte-se a fonoaudiólogas que recuperaram sua rotina e voltaram a se
-          apaixonar pela clínica. Comece seu teste gratuito de 7 dias agora.
+          Junte-se a fonoaudiólogas que recuperaram sua rotina e voltaram a se apaixonar pela
+          clínica. Comece seu teste gratuito de 7 dias agora.
         </p>
       </motion.div>
 
@@ -61,10 +59,7 @@ export default function Signup() {
         >
           <div className="grid grid-cols-1 gap-6">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-bold text-gray-700 mb-2"
-              >
+              <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">
                 Nome Completo
               </label>
               <input
@@ -78,10 +73,7 @@ export default function Signup() {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-bold text-gray-700 mb-2"
-              >
+              <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">
                 E-mail profissional
               </label>
               <input
@@ -99,7 +91,9 @@ export default function Signup() {
           {/* Hidden fields revealed on name input */}
           <div
             id="hidden-fields"
-            className={showHidden ? "space-y-6 pt-2 transition-all duration-500 ease-in-out" : "hidden-step"}
+            className={
+              showHidden ? 'space-y-6 pt-2 transition-all duration-500 ease-in-out' : 'hidden-step'
+            }
           >
             <div className="p-4 bg-primary/5 rounded-2xl border border-primary/10">
               <p className="text-xs text-primary font-bold uppercase tracking-wider mb-4">
@@ -107,10 +101,7 @@ export default function Signup() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="specialty"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
+                  <label htmlFor="specialty" className="block text-sm font-bold text-gray-700 mb-2">
                     Sua especialidade
                   </label>
                   <select
@@ -130,10 +121,7 @@ export default function Signup() {
                   </select>
                 </div>
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
+                  <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-2">
                     WhatsApp
                   </label>
                   <input
@@ -151,7 +139,7 @@ export default function Signup() {
 
           <div className="pt-4">
             <a
-              href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
+              href="https://app.useevolua.com.br/auth/cadastro"
               className="w-full py-5 px-8 bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-2xl shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 group"
             >
               Quero meu teste grátis agora

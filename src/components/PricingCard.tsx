@@ -1,4 +1,4 @@
-import type { PricingPlan } from "@/types";
+import type { PricingPlan } from '@/types';
 
 export default function PricingCard({
   name,
@@ -18,13 +18,9 @@ export default function PricingCard({
         <h3 className="text-2xl font-bold mb-2">{name}</h3>
         <div className="text-4xl font-bold mb-4">
           R$ {price}
-          <span className="text-base font-normal text-primary-light/80">
-            {period}
-          </span>
+          <span className="text-base font-normal text-primary-light/80">{period}</span>
         </div>
-        {description && (
-          <p className="text-sm text-primary-light mb-6">{description}</p>
-        )}
+        {description && <p className="text-sm text-primary-light mb-6">{description}</p>}
         <ul className="space-y-3 mb-6 text-left">
           {features.map((feature) => (
             <li key={feature} className="flex items-center gap-3 text-sm text-white">
@@ -36,7 +32,7 @@ export default function PricingCard({
           ))}
         </ul>
         <a
-          href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
+          href="https://app.useevolua.com.br/auth/cadastro"
           className="block w-full py-3 px-6 bg-white hover:bg-gray-50 text-primary font-bold rounded-xl transition-colors text-center shadow-lg"
         >
           {ctaLabel}
@@ -52,21 +48,17 @@ export default function PricingCard({
         R$ {price}
         <span className="text-sm font-normal text-gray-500">{period}</span>
       </div>
-      {description && (
-        <p className="text-sm text-text-secondary-light mb-8">{description}</p>
-      )}
+      {description && <p className="text-sm text-text-secondary-light mb-8">{description}</p>}
       <ul className="space-y-4 mb-8 text-left">
         {features.map((feature) => (
           <li key={feature} className="flex items-center gap-3 text-sm text-gray-700">
-            <span className="material-symbols-outlined text-primary text-base">
-              check
-            </span>
+            <span className="material-symbols-outlined text-primary text-base">check</span>
             {feature}
           </li>
         ))}
       </ul>
       <a
-        href="https://main.d13ha6b4opi2ib.amplifyapp.com/auth/cadastro"
+        href="https://app.useevolua.com.br/auth/cadastro"
         className="block w-full py-3 px-6 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-xl transition-colors text-center"
       >
         {ctaLabel}
